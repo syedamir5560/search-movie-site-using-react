@@ -8,7 +8,7 @@ function Home() {
 
   return (
 
-    <div>Home {context}</div>
+    <div>Home {context  }</div>
 
   )
 }
