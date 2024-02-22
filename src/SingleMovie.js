@@ -1,7 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { useGlobalContext } from './context'
+
+
 
 function SingleMovie() {
+
+  
 
     let { id } = useParams()
 

@@ -5,15 +5,14 @@ import Movie from './Movie'
 
 
 function Home() {
-  return (
+    return (
 
-    <div>
-         <Movie/>
-        <Search/>
-       
-    </div>
+        <div>
+            <Search/>
+            <Movie/>
+        </div>
 
-  )
+    )
 }
 
 export default Home

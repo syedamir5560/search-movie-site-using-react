@@ -17,10 +17,9 @@ const AppProvoider = ({ children }) => {
             let data = await getUrl.json()
             console.log(data)
 
-            if (data.Response === "true") {
+            if (data.Response === "True") {
                 setIsLoading(false)
                 setMovies(data.Search)
-
             }
             else {
                 setIsError({
@@ -40,9 +39,6 @@ const AppProvoider = ({ children }) => {
         {children}
     </AppContext.Provider>
 
-    const useGlobalContext = () => {
-        return useContext(AppContext)
-    }
 }
 
 const useGlobalContext = () => {
