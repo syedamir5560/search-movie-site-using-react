@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react"
 
 const AppContext = React.createContext()
 
-let URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`
+export let URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`
 
 const AppProvoider = ({ children }) => {
 
@@ -13,6 +13,8 @@ const AppProvoider = ({ children }) => {
     let [query, setQuery] = useState('titanic')
 
     let getMovies = async (url) => {
+
+        setIsLoading(true)
 
         try {
             let getUrl = await fetch(url)

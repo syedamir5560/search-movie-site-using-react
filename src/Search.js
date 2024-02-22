@@ -13,7 +13,7 @@ function Search() {
                     <div>
                         <input
                             type="text"
-                            placeholder="search movie"
+                            placeholder="Enter Movie Name..."
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                         />
