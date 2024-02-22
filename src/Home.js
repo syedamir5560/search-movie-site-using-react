@@ -1,14 +1,17 @@
 import React, { useContext } from 'react'
-import { useGlobalContext } from './context'
+
+import Search from './Search'
+import Movie from './Movie'
 
 
 function Home() {
-
-    let context = useGlobalContext()  
-
   return (
 
-    <div>Home {context  }</div>
+    <div>
+         <Movie/>
+        <Search/>
+       
+    </div>
 
   )
 }

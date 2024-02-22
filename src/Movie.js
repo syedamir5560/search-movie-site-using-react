@@ -1,9 +1,20 @@
 import React from 'react'
+import { useGlobalContext } from './context'
 
 function Movie() {
-  return (
-    <div>Movie</div>
-  )
+
+    let { movies } = useGlobalContext()
+
+    return (
+        <>
+            { movies.map((curMovie) => {
+                return (
+                    <h2>{curMovie.Title}</h2>
+                )
+            })}
+        </>
+    )
 }
+
 
 export default Movie

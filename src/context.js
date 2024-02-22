@@ -8,37 +8,35 @@ const AppProvoider = ({ children }) => {
 
     let [isLoading, setIsLoading] = useState(true)
     let [movies, setMovies] = useState([])
-    let [isError, setIsError] = useState({ show: 'false', msg: '' })
-
-
+    let [isError, setIsError] = useState({ show: 'false', msg: ' ' })
 
     let getMovies = async (url) => {
 
         try {
             let getUrl = await fetch(url)
             let data = await getUrl.json()
-            // console.log(data)
-            if (data.Response === true) {
+            console.log(data)
+
+            if (data.Response === "true") {
                 setIsLoading(false)
                 setMovies(data.Search)
+
             }
             else {
-                setIsLoading({
+                setIsError({
                     show: 'true', msg: data.error
                 })
             }
         } catch (Error) {
             console.log(Error)
         }
-
     }
 
-    useEffect((url) => {
+    useEffect(() => {
         getMovies(URL)
-    })
+    }, [])
 
-
-    return <AppContext.Provider value='AAMIR'>
+    return <AppContext.Provider value={{ isLoading, movies, isError }}>
         {children}
     </AppContext.Provider>
 
